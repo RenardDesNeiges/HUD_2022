@@ -15,7 +15,7 @@ class BuildFolium:
 
 
     @staticmethod
-    def add_raster(path,subsample=1):
+    def add_raster(path,name,subsample=1):
         
         with rio.open(path) as src:
             map_boundary = src.bounds
@@ -27,15 +27,16 @@ class BuildFolium:
         
         raster = folium.raster_layers.ImageOverlay(map_low_res,
                                 bnd,
-                                opacity=1)
+                                opacity=1,
+                                name=name)
         
         return raster, clat, clon
 
     
     @staticmethod
-    def add_shape(path):
+    def add_shape(path,name):
         df = gpd.read_file(path)
-        return folium.GeoJson(data=df['geometry'])
+        return folium.GeoJson(data=df['geometry'],name=name)
         
     
     @staticmethod
@@ -44,15 +45,21 @@ class BuildFolium:
         building_1830_path = 'data/b_1830.gpkg'
         raster_1830_path = 'data/1830_modified.tif'
         
-        raster, clat, clon = BuildFolium.add_raster(raster_1830_path,3)
-        shape = BuildFolium.add_shape(building_1830_path)
+        
+        
+        raster, clat, clon = BuildFolium.add_raster(raster_1830_path,'Carte 1830',3)
+        shape = BuildFolium.add_shape(building_1830_path, 'Bati 1830')
+
         display_map = folium.Map(location=[clat,clon], 
-                        tiles="Stamen Terrain",
+                        tiles=None,
                         zoom_start=15) 
 
         raster.add_to(display_map)
         
         shape.add_to(display_map)
+        
+        folium.LayerControl(collapse=False).add_to(display_map)
+
 
         print("Folium loaded!")
         return display_map
