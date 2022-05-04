@@ -1,19 +1,11 @@
 from flask import Flask
-from build_folium import BuildFolium
-
-
-
+from flask import render_template
 
 app = Flask(__name__)
 
-
-display_map = BuildFolium.build()
-
 @app.route('/')
 def index():
-
-    return display_map._repr_html_()
-
+    return render_template('index.html')
 
 if __name__ == '__main__':
     app.run(debug=True, port=3000)

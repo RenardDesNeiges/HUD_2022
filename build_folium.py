@@ -63,3 +63,14 @@ class BuildFolium:
 
         print("Folium loaded!")
         return display_map
+
+
+if __name__ == '__main__':
+    with rio.open('data/1830_modified.tif') as src:
+            map_boundary = src.bounds
+            map_img = src.read(1)
+    bnd, clat, clon = BuildFolium.rio_to_folium_coords(map_boundary)
+    print("Boundaries :", bnd)
+    df = gpd.read_file('data/b_1830.gpkg')
+    df.geometry = df.geometry.to_crs('EPSG:4326')
+    df.to_file('static/json/b_1830.geojson', driver='GeoJSON')
