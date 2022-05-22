@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HUD 2022</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+      integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+      crossorigin=""
+    />
+    <script
+      src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+      integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+      crossorigin=""
+    ></script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script src="static/js/main.js"></script>
+  </head>
+  <body>
+    <div class="flex h-screen">
+      <div class="w-full flex flex-col">
+        <div class="px-5 py-2 flex justify-between items-center">
+          <div>
+            <h1 class="text-xl">Historique des transports Lausannois</h1>
+            <p class="text-gray-500">et le lien avec le développement urbain</p>
+          </div>
+          <div>Lausanne Time Machine 2022</div>
+        </div>
+        <div id="map" class="h-full bg-yellow-50"></div>
+        <div class="h-24 flex flex-row items-center">
+          <button
+            class="show-map bg-blue-500 mx-auto block rounded-md text-white py-2 px-2"
+            data-id="1830"
+          >
+            1830
+          </button>
+          <button
+            class="show-map bg-blue-500 mx-auto block rounded-md text-white py-2 px-2"
+            data-id="1873"
+          >
+            1873
+          </button>
+          <button
+            class="show-map bg-blue-500 mx-auto block rounded-md text-white py-2 px-2"
+            data-id="1894"
+          >
+            1894
+          </button>
+          <button
+            class="show-map bg-blue-500 mx-auto block rounded-md text-white py-2 px-2"
+            data-id="1928"
+          >
+            1928
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="p-10">
+      <div id="diligences" class="mb-5 hidden">
+        <h2 class="text-xl font-bold">Les diligences</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
+          ultricies, elit quis dapibus mollis, quam mauris luctus erat, ac
+          commodo lacus ipsum in leo. Nunc in fringilla mi. Curabitur ut commodo
+          arcu. Aenean ut egestas eros. Integer id augue ac mi tincidunt
+          fermentum id non nibh. Pellentesque habitant morbi tristique senectus
+          et netus et malesuada fames ac turpis egestas. Pellentesque pulvinar
+          rhoncus ex, at pulvinar metus. Vestibulum malesuada fermentum metus.
+          Proin nec nisi convallis, vulputate orci et, viverra ante. Quisque
+          arcu urna, feugiat vitae sem at, eleifend tempor mi. Suspendisse
+          facilisis ligula eget lobortis mollis. Mauris posuere ut enim in
+          faucibus. Curabitur non facilisis magna. Etiam velit quam, malesuada
+          in fermentum non, rhoncus ut purus.
+        </p>
+      </div>
+      <div id="gare" class="mb-5 hidden">
+        <h2 class="text-xl font-bold">La Gare</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
+          ultricies, elit quis dapibus mollis, quam mauris luctus erat, ac
+          commodo lacus ipsum in leo. Nunc in fringilla mi. Curabitur ut commodo
+          arcu. Aenean ut egestas eros. Integer id augue ac mi tincidunt
+          fermentum id non nibh. Pellentesque habitant morbi tristique senectus
+          et netus et malesuada fames ac turpis egestas. Pellentesque pulvinar
+          rhoncus ex, at pulvinar metus. Vestibulum malesuada fermentum metus.
+          Proin nec nisi convallis, vulputate orci et, viverra ante. Quisque
+          arcu urna, feugiat vitae sem at, eleifend tempor mi. Suspendisse
+          facilisis ligula eget lobortis mollis. Mauris posuere ut enim in
+          faucibus. Curabitur non facilisis magna. Etiam velit quam, malesuada
+          in fermentum non, rhoncus ut purus.
+        </p>
+      </div>
+      <div id="funiculaire" class="mb-5 hidden">
+        <h2 class="text-xl font-bold">Le Funiculaire</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
+          ultricies, elit quis dapibus mollis, quam mauris luctus erat, ac
+          commodo lacus ipsum in leo. Nunc in fringilla mi. Curabitur ut commodo
+          arcu. Aenean ut egestas eros. Integer id augue ac mi tincidunt
+          fermentum id non nibh. Pellentesque habitant morbi tristique senectus
+          et netus et malesuada fames ac turpis egestas. Pellentesque pulvinar
+          rhoncus ex, at pulvinar metus. Vestibulum malesuada fermentum metus.
+          Proin nec nisi convallis, vulputate orci et, viverra ante. Quisque
+          arcu urna, feugiat vitae sem at, eleifend tempor mi. Suspendisse
+          facilisis ligula eget lobortis mollis. Mauris posuere ut enim in
+          faucibus. Curabitur non facilisis magna. Etiam velit quam, malesuada
+          in fermentum non, rhoncus ut purus.
+        </p>
+      </div>
+
+      <div id="tram1896" class="mb-5 hidden">
+        <h2 class="text-xl font-bold">Le tramway (1896)</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
+          ultricies, elit quis dapibus mollis, quam mauris luctus erat, ac
+          commodo lacus ipsum in leo. Nunc in fringilla mi. Curabitur ut commodo
+          arcu. Aenean ut egestas eros. Integer id augue ac mi tincidunt
+          fermentum id non nibh. Pellentesque habitant morbi tristique senectus
+          et netus et malesuada fames ac turpis egestas. Pellentesque pulvinar
+          rhoncus ex, at pulvinar metus. Vestibulum malesuada fermentum metus.
+          Proin nec nisi convallis, vulputate orci et, viverra ante. Quisque
+          arcu urna, feugiat vitae sem at, eleifend tempor mi. Suspendisse
+          facilisis ligula eget lobortis mollis. Mauris posuere ut enim in
+          faucibus. Curabitur non facilisis magna. Etiam velit quam, malesuada
+          in fermentum non, rhoncus ut purus.
+        </p>
+      </div>
+
+      <div id="tram1928" class="mb-5 hidden">
+        <h2 class="text-xl font-bold">Le tramway (1928)</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
+          ultricies, elit quis dapibus mollis, quam mauris luctus erat, ac
+          commodo lacus ipsum in leo. Nunc in fringilla mi. Curabitur ut commodo
+          arcu. Aenean ut egestas eros. Integer id augue ac mi tincidunt
+          fermentum id non nibh. Pellentesque habitant morbi tristique senectus
+          et netus et malesuada fames ac turpis egestas. Pellentesque pulvinar
+          rhoncus ex, at pulvinar metus. Vestibulum malesuada fermentum metus.
+          Proin nec nisi convallis, vulputate orci et, viverra ante. Quisque
+          arcu urna, feugiat vitae sem at, eleifend tempor mi. Suspendisse
+          facilisis ligula eget lobortis mollis. Mauris posuere ut enim in
+          faucibus. Curabitur non facilisis magna. Etiam velit quam, malesuada
+          in fermentum non, rhoncus ut purus.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

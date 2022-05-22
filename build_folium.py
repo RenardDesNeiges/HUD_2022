@@ -66,11 +66,23 @@ class BuildFolium:
 
 
 if __name__ == '__main__':
-    with rio.open('data/1830_modified.tif') as src:
+    with rio.open('data/1894.tif') as src:
             map_boundary = src.bounds
             map_img = src.read(1)
     bnd, clat, clon = BuildFolium.rio_to_folium_coords(map_boundary)
     print("Boundaries :", bnd)
-    df = gpd.read_file('data/b_1830.gpkg')
-    df.geometry = df.geometry.to_crs('EPSG:4326')
-    df.to_file('static/json/b_1830.geojson', driver='GeoJSON')
+    # df = gpd.read_file('data/1873_train.gpkg')
+    # df.geometry = df.geometry.to_crs('EPSG:4326')
+    # df.to_file('static/json/1873_train.geojson', driver='GeoJSON')
+    # df = gpd.read_file('data/1894_funiculaire.gpkg')
+    # df.geometry = df.geometry.to_crs('EPSG:4326')
+    # df.to_file('static/json/1894_funiculaire.geojson', driver='GeoJSON')
+    # df = gpd.read_file('data/1896_tramway.gpkg')
+    # df.geometry = df.geometry.to_crs('EPSG:4326')
+    # df.to_file('static/json/1896_tramway.geojson', driver='GeoJSON')
+    # df = gpd.read_file('data/1928_tramway_1.gpkg')
+    # df.geometry = df.geometry.to_crs('EPSG:4326')
+    # df.to_file('static/json/1928_tramway_1.geojson', driver='GeoJSON')
+    # df = gpd.read_file('data/1928_tramway_2.gpkg')
+    # df.geometry = df.geometry.to_crs('EPSG:4326')
+    # df.to_file('static/json/1928_tramway_2.geojson', driver='GeoJSON')
