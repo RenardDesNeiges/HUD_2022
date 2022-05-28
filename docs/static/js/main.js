@@ -1,6 +1,11 @@
-// var map = L.map("map").setView([51.505, -0.09], 13);
 
 $(document).ready(function () {
+
+  var _tile_background =  L.tileLayer.wms('https://wms.geo.admin.ch/?', {
+    layers: 'ch.bafu.schutzgebieten-emeraude',
+    'transparent' : true,
+})
+
   var map = L.map("map").setView([46.51924129322557, 6.6315754917602625], 14);
 
   // cartes
@@ -65,6 +70,7 @@ $(document).ready(function () {
 
   let control = null;
 
+  _tile_background.addTo(map);
   // base vectorielle de Lausanne
   fetch("static/json/base_1830.geojson")
     .then((res) => res.json())
@@ -232,6 +238,7 @@ $(document).ready(function () {
     ],
   };
 
+  
   // articles
 
   const articles = {
@@ -254,7 +261,7 @@ $(document).ready(function () {
       markers[key].forEach((m) => map.removeLayer(m));
       articles[key].forEach((a) => a.hide());
     }
-    // map_dict[map_id].addTo(map);
+    
     b_dict[map_id].addTo(map);
     bases_dict[map_id].addTo(map);
     for (const key in t_dict) {
@@ -264,6 +271,8 @@ $(document).ready(function () {
         }
       }
     }
+    _tile_background.addTo(map);
+    
     markers[map_id].forEach((m) => m.addTo(map));
     articles[map_id].forEach((m) => m.show());
 

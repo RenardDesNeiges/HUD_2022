@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Yeseva+One&display=swap');
+      </style>
+
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -18,6 +22,17 @@
     ></script>
 
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          fontFamily: {
+            'sans': 'Poppins',
+            'serif': 'IBM Plex Serif',
+          }
+        }
+      
+      }
+    </script>
     <script
       src="https://code.jquery.com/jquery-3.6.0.min.js"
       integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
@@ -25,38 +40,41 @@
     ></script>
     <script src="static/js/main.js"></script>
   </head>
-  <body>
+  <body class="font-sans">
     <div class="flex h-screen">
-      <div class="w-full flex flex-col">
-        <div class="px-5 py-2 flex justify-between items-center">
-          <div>
-            <h1 class="text-xl">Historique des transports Lausannois</h1>
-            <p class="text-gray-500">et le lien avec le développement urbain</p>
+      <div class="w-full flex flex-col bg-zinc-800">
+        
+        <div class="px-5 py-2 flex justify-between items-center text-white">
+          <div class="w-1/2">
+            <h1 class="text-2xl font-bold  py-2">Déverser des centaines de litre de purin dans l'eau potable de Morges, un acte nécessaire? Vie et oeuvre de Jean Jacques Mercier 3</h1>
           </div>
-          <div>Lausanne Time Machine 2022</div>
+          <div class="px-5 text-6xl italic font-black w-1/2 text-right">LTM 2022
+            <p class="py-2 text-base font-light">Une histoire géographique du développement des transports publics dans le centre ville de Lausanne.</p>
+          </div>
         </div>
-        <div id="map" class="h-full bg-yellow-50"></div>
-        <div class="h-24 flex flex-row items-center">
+
+        <div id="map" class="h-full bg-black"></div>
+        <div class="h-20 text-2xl flex flex-row items-center">
           <button
-            class="show-map bg-blue-500 mx-auto block rounded-md text-white py-2 px-2"
+            class="show-map font-thin bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 mx-auto block text-white py-5 px-10"
             data-id="1830"
           >
             1830
           </button>
           <button
-            class="show-map bg-blue-500 mx-auto block rounded-md text-white py-2 px-2"
+            class="show-map font-thin bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 mx-auto block text-white py-5 px-10"
             data-id="1873"
           >
             1873
           </button>
           <button
-            class="show-map bg-blue-500 mx-auto block rounded-md text-white py-2 px-2"
+            class="show-map font-thin bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 mx-auto block text-white py-5 px-10"
             data-id="1894"
           >
             1894
           </button>
           <button
-            class="show-map bg-blue-500 mx-auto block rounded-md text-white py-2 px-2"
+            class="show-map font-thin bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 mx-auto block text-white py-5 px-10"
             data-id="1928"
           >
             1928
@@ -64,93 +82,95 @@
         </div>
       </div>
     </div>
-    <div class="p-10">
-      <div id="diligences" class="mb-5 hidden">
-        <h2 class="text-xl font-bold">Les diligences</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
-          ultricies, elit quis dapibus mollis, quam mauris luctus erat, ac
-          commodo lacus ipsum in leo. Nunc in fringilla mi. Curabitur ut commodo
-          arcu. Aenean ut egestas eros. Integer id augue ac mi tincidunt
-          fermentum id non nibh. Pellentesque habitant morbi tristique senectus
-          et netus et malesuada fames ac turpis egestas. Pellentesque pulvinar
-          rhoncus ex, at pulvinar metus. Vestibulum malesuada fermentum metus.
-          Proin nec nisi convallis, vulputate orci et, viverra ante. Quisque
-          arcu urna, feugiat vitae sem at, eleifend tempor mi. Suspendisse
-          facilisis ligula eget lobortis mollis. Mauris posuere ut enim in
-          faucibus. Curabitur non facilisis magna. Etiam velit quam, malesuada
-          in fermentum non, rhoncus ut purus.
-        </p>
-      </div>
-      <div id="gare" class="mb-5 hidden">
-        <h2 class="text-xl font-bold">La Gare</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
-          ultricies, elit quis dapibus mollis, quam mauris luctus erat, ac
-          commodo lacus ipsum in leo. Nunc in fringilla mi. Curabitur ut commodo
-          arcu. Aenean ut egestas eros. Integer id augue ac mi tincidunt
-          fermentum id non nibh. Pellentesque habitant morbi tristique senectus
-          et netus et malesuada fames ac turpis egestas. Pellentesque pulvinar
-          rhoncus ex, at pulvinar metus. Vestibulum malesuada fermentum metus.
-          Proin nec nisi convallis, vulputate orci et, viverra ante. Quisque
-          arcu urna, feugiat vitae sem at, eleifend tempor mi. Suspendisse
-          facilisis ligula eget lobortis mollis. Mauris posuere ut enim in
-          faucibus. Curabitur non facilisis magna. Etiam velit quam, malesuada
-          in fermentum non, rhoncus ut purus.
-        </p>
-      </div>
-      <div id="funiculaire" class="mb-5 hidden">
-        <h2 class="text-xl font-bold">Le Funiculaire</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
-          ultricies, elit quis dapibus mollis, quam mauris luctus erat, ac
-          commodo lacus ipsum in leo. Nunc in fringilla mi. Curabitur ut commodo
-          arcu. Aenean ut egestas eros. Integer id augue ac mi tincidunt
-          fermentum id non nibh. Pellentesque habitant morbi tristique senectus
-          et netus et malesuada fames ac turpis egestas. Pellentesque pulvinar
-          rhoncus ex, at pulvinar metus. Vestibulum malesuada fermentum metus.
-          Proin nec nisi convallis, vulputate orci et, viverra ante. Quisque
-          arcu urna, feugiat vitae sem at, eleifend tempor mi. Suspendisse
-          facilisis ligula eget lobortis mollis. Mauris posuere ut enim in
-          faucibus. Curabitur non facilisis magna. Etiam velit quam, malesuada
-          in fermentum non, rhoncus ut purus.
-        </p>
-      </div>
+    <div class="flex flex-row">
+      <div class="p-6 font-serif max-w-[70em] mx-auto"">
+        <div id="diligences" class="mb-5 hidden px-20 py-10">
+          <h2 class="text-8xl font-black italic py-8 font-sans">Les Diligences</h2>
+          <p>
+            Avec la nouvelle confédération de 1848, les services postaux deviennent une compétence de l'État fédéral. En 1849 est créé la Régie fédérale des postes et l’une de ses tâche est celle du transport de personnes [1]
+            Auparavant le transport de personnes par diligence existait déjà mais n'était pas uniformisé au niveau national comme l’atteste ce ticket de diligence [2]
+            Les diligences permettent à la fois le transport des personnes et d’envois postaux. Le lien entre ces deux se ressent dans les lieux de départ et d’arrivées des diligences. Elles partent et arrivent des bureaux de postes des différentes villes.
+          </p>
+          <img src="static/img/hotel_des_postes.jpeg" class="w-screen py-8">
+          <p>
+            A Lausanne, le bureau de poste à toujours été localisé à la place Saint-François. Puisque des départs avaient lieu au milieu de la nuit [3], des hôtels des postes furent bâti pour accueillir les voyageurs·euses. La place Saint-François devint ainsi un nœud important du réseau de transport déjà avant les tramways et les bus. Véritable nœud central du réseau de par sa position stratégique au porte de la ville de Lausanne au 19ème siècle et au croisement de plusieurs routes vers des villes d’importance. L’actuel hôtel des postes à été construit à la fin du 19ème siècle et, de par son allure imposante, il traduit l’importance du réseau postal à l’époque et pour la ville de Lausanne. </br>
+            Le premier hôtel des postes, construit en 1808, se situait au devant de l’église Saint-François et ensuite il s’est déplacé dans le bâtiment des portes de saint-françois, aujourd’hui occupé par des commerces et des banques. Le premier bâtiment a quand à lui été détruit [5]
+          </p>
+          <h2 class="text-4xl font-bold italic py-4 font-sans">Sources :</h2>
+          <p>
+            Les sources
+          </p>
+        </div>
+        <div id="gare" class="mb-5 hidden px-20 py-10">
+          <h2 class="text-8xl font-black italic py-8 font-sans">La Gare</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
+            ultricies, elit quis dapibus mollis, quam mauris luctus erat, ac
+            commodo lacus ipsum in leo. Nunc in fringilla mi. Curabitur ut commodo
+            arcu. Aenean ut egestas eros. Integer id augue ac mi tincidunt
+            fermentum id non nibh. Pellentesque habitant morbi tristique senectus
+            et netus et malesuada fames ac turpis egestas. Pellentesque pulvinar
+            rhoncus ex, at pulvinar metus. Vestibulum malesuada fermentum metus.
+            Proin nec nisi convallis, vulputate orci et, viverra ante. Quisque
+            arcu urna, feugiat vitae sem at, eleifend tempor mi. Suspendisse
+            facilisis ligula eget lobortis mollis. Mauris posuere ut enim in
+            faucibus. Curabitur non facilisis magna. Etiam velit quam, malesuada
+            in fermentum non, rhoncus ut purus.
+          </p>
+        </div>
+        <div id="funiculaire" class="mb-5 hidden px-20 py-10">
+          <h2 class="text-8xl font-black italic py-8 font-sans">Le Funiculaire</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
+            ultricies, elit quis dapibus mollis, quam mauris luctus erat, ac
+            commodo lacus ipsum in leo. Nunc in fringilla mi. Curabitur ut commodo
+            arcu. Aenean ut egestas eros. Integer id augue ac mi tincidunt
+            fermentum id non nibh. Pellentesque habitant morbi tristique senectus
+            et netus et malesuada fames ac turpis egestas. Pellentesque pulvinar
+            rhoncus ex, at pulvinar metus. Vestibulum malesuada fermentum metus.
+            Proin nec nisi convallis, vulputate orci et, viverra ante. Quisque
+            arcu urna, feugiat vitae sem at, eleifend tempor mi. Suspendisse
+            facilisis ligula eget lobortis mollis. Mauris posuere ut enim in
+            faucibus. Curabitur non facilisis magna. Etiam velit quam, malesuada
+            in fermentum non, rhoncus ut purus.
+          </p>
+        </div>
 
-      <div id="tram1896" class="mb-5 hidden">
-        <h2 class="text-xl font-bold">Le tramway (1896)</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
-          ultricies, elit quis dapibus mollis, quam mauris luctus erat, ac
-          commodo lacus ipsum in leo. Nunc in fringilla mi. Curabitur ut commodo
-          arcu. Aenean ut egestas eros. Integer id augue ac mi tincidunt
-          fermentum id non nibh. Pellentesque habitant morbi tristique senectus
-          et netus et malesuada fames ac turpis egestas. Pellentesque pulvinar
-          rhoncus ex, at pulvinar metus. Vestibulum malesuada fermentum metus.
-          Proin nec nisi convallis, vulputate orci et, viverra ante. Quisque
-          arcu urna, feugiat vitae sem at, eleifend tempor mi. Suspendisse
-          facilisis ligula eget lobortis mollis. Mauris posuere ut enim in
-          faucibus. Curabitur non facilisis magna. Etiam velit quam, malesuada
-          in fermentum non, rhoncus ut purus.
-        </p>
-      </div>
+        <div id="tram1896" class="mb-5 hidden px-20 py-10">
+          <h2 class="text-8xl font-black italic py-8 font-sans">Le tramway (1896)</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
+            ultricies, elit quis dapibus mollis, quam mauris luctus erat, ac
+            commodo lacus ipsum in leo. Nunc in fringilla mi. Curabitur ut commodo
+            arcu. Aenean ut egestas eros. Integer id augue ac mi tincidunt
+            fermentum id non nibh. Pellentesque habitant morbi tristique senectus
+            et netus et malesuada fames ac turpis egestas. Pellentesque pulvinar
+            rhoncus ex, at pulvinar metus. Vestibulum malesuada fermentum metus.
+            Proin nec nisi convallis, vulputate orci et, viverra ante. Quisque
+            arcu urna, feugiat vitae sem at, eleifend tempor mi. Suspendisse
+            facilisis ligula eget lobortis mollis. Mauris posuere ut enim in
+            faucibus. Curabitur non facilisis magna. Etiam velit quam, malesuada
+            in fermentum non, rhoncus ut purus.
+          </p>
+        </div>
 
-      <div id="tram1928" class="mb-5 hidden">
-        <h2 class="text-xl font-bold">Le tramway (1928)</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
-          ultricies, elit quis dapibus mollis, quam mauris luctus erat, ac
-          commodo lacus ipsum in leo. Nunc in fringilla mi. Curabitur ut commodo
-          arcu. Aenean ut egestas eros. Integer id augue ac mi tincidunt
-          fermentum id non nibh. Pellentesque habitant morbi tristique senectus
-          et netus et malesuada fames ac turpis egestas. Pellentesque pulvinar
-          rhoncus ex, at pulvinar metus. Vestibulum malesuada fermentum metus.
-          Proin nec nisi convallis, vulputate orci et, viverra ante. Quisque
-          arcu urna, feugiat vitae sem at, eleifend tempor mi. Suspendisse
-          facilisis ligula eget lobortis mollis. Mauris posuere ut enim in
-          faucibus. Curabitur non facilisis magna. Etiam velit quam, malesuada
-          in fermentum non, rhoncus ut purus.
-        </p>
+        <div id="tram1928" class="mb-5 hidden px-20 py-10">
+          <h2 class="text-8xl font-black italic py-8 font-sans">Le tramway</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
+            ultricies, elit quis dapibus mollis, quam mauris luctus erat, ac
+            commodo lacus ipsum in leo. Nunc in fringilla mi. Curabitur ut commodo
+            arcu. Aenean ut egestas eros. Integer id augue ac mi tincidunt
+            fermentum id non nibh. Pellentesque habitant morbi tristique senectus
+            et netus et malesuada fames ac turpis egestas. Pellentesque pulvinar
+            rhoncus ex, at pulvinar metus. Vestibulum malesuada fermentum metus.
+            Proin nec nisi convallis, vulputate orci et, viverra ante. Quisque
+            arcu urna, feugiat vitae sem at, eleifend tempor mi. Suspendisse
+            facilisis ligula eget lobortis mollis. Mauris posuere ut enim in
+            faucibus. Curabitur non facilisis magna. Etiam velit quam, malesuada
+            in fermentum non, rhoncus ut purus.
+          </p>
+        </div>
       </div>
     </div>
   </body>
