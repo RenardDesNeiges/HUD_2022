@@ -239,7 +239,7 @@ $(document).ready(function () {
       L.marker([46.52064916988745, 6.629920286708344]).bindPopup(
         "<b>Le Flon</b><br>Arrivée du funiculaire au flon<br><a href='#flon_1894'>En lire plus</a>"
       ),
-      L.marker([46.518924, 6.634789]).bindPopup(
+      L.marker([46.52184844667169, 6.638673977796248]).bindPopup(
         "<b>Tramway (1896)</b><br>Début des tramways à lausanne<br><a href='#tram1896'>En lire plus</a>"
       ),
     ],
