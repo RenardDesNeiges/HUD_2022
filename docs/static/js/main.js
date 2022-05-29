@@ -225,6 +225,9 @@ $(document).ready(function () {
         L.marker([46.516526, 6.629209]).bindPopup(
           "<b>Gare</b><br>Le début des trains à lausanne..<br><a href='#gare'>En lire plus</a>"
           ),
+          L.marker([46.50624689923878, 6.626120736247698]).bindPopup(
+            "<b>Ouchy</b><br>Débarcadère d'Ouchy, arrivée des bâteaux à vapeur à Lausanne.<br><a href='#ouchy_1873'>En lire plus</a>"
+          ).addTo(map),
         ],
         1894: [
           L.marker([46.512952, 6.628115]).bindPopup(
@@ -252,7 +255,7 @@ $(document).ready(function () {
 
   const articles = {
     1830: [$("#diligences").show(),$("#ouchy").show()],
-    1873: [$("#gare"),],
+    1873: [$("#gare"),$("#ouchy_1873")],
     1894: [$("#funiculaire"), $("#tram1896"), $("#flon_1894"),$("#ouchy_1894")],
     1928: [$("#tram1928")],
   };
