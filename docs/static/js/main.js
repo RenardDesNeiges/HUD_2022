@@ -217,15 +217,24 @@ $(document).ready(function () {
           "<b>Place de la poste</b><br>Diligences...<br><a href='#diligences'>En lire plus</a>"
         )
         .addTo(map),
-    ],
-    1873: [
-      L.marker([46.516526, 6.629209]).bindPopup(
-        "<b>Gare</b><br>Le début des trains à lausanne..<br><a href='#gare'>En lire plus</a>"
-      ),
-    ],
-    1894: [
-      L.marker([46.512952, 6.628115]).bindPopup(
-        "<b>Funiculaire</b><br>Funiculaire reliant Ouchy au Flon<br><a href='#funiculaire'>En lire plus</a>"
+        L.marker([46.50624689923878, 6.626120736247698]).bindPopup(
+          "<b>Débarcadère</b><br>Débarcadère d'Ouchy, arrivée des bâteaux à vapeur à Lausanne.<br><a href='#ouchy'>En lire plus</a>"
+        ).addTo(map),
+      ],
+      1873: [
+        L.marker([46.516526, 6.629209]).bindPopup(
+          "<b>Gare</b><br>Le début des trains à lausanne..<br><a href='#gare'>En lire plus</a>"
+          ),
+        ],
+        1894: [
+          L.marker([46.512952, 6.628115]).bindPopup(
+            "<b>Funiculaire</b><br>Funiculaire reliant Ouchy au Flon<br><a href='#funiculaire'>En lire plus</a>"
+            ),
+            L.marker([46.50624689923878, 6.626120736247698]).bindPopup(
+              "<b>Débarcadère</b><br>Débarcadère d'Ouchy, arrivée des bâteaux à vapeur à Lausanne et connection avec le Funiculaire.<br><a href='#ouchy_1894'>En lire plus</a>"
+            ).addTo(map),
+      L.marker([46.52064916988745, 6.629920286708344]).bindPopup(
+        "<b>Le Flon</b><br>Arrivée du funiculaire au flon<br><a href='#flon_1894'>En lire plus</a>"
       ),
       L.marker([46.518924, 6.634789]).bindPopup(
         "<b>Tramway (1896)</b><br>Début des tramways à lausanne<br><a href='#tram1896'>En lire plus</a>"
@@ -242,15 +251,17 @@ $(document).ready(function () {
   // articles
 
   const articles = {
-    1830: [$("#diligences").show()],
-    1873: [$("#gare")],
-    1894: [$("#funiculaire"), $("#tram1896")],
+    1830: [$("#diligences").show(),$("#ouchy").show()],
+    1873: [$("#gare"),],
+    1894: [$("#funiculaire"), $("#tram1896"), $("#flon_1894"),$("#ouchy_1894")],
     1928: [$("#tram1928")],
   };
 
   // gestion des boutons
   $(".show-map").on("click", function () {
     const map_id = $(this).data("id");
+    $("#date-text").html(map_id)
+
     for (const key in map_dict) {
       map.removeLayer(map_dict[key]);
       map.removeLayer(bases_dict[key]);
@@ -272,7 +283,8 @@ $(document).ready(function () {
       }
     }
     _tile_background.addTo(map);
-    
+    // map_dict[map_id].addTo(map);
+
     markers[map_id].forEach((m) => m.addTo(map));
     articles[map_id].forEach((m) => m.show());
 
@@ -297,5 +309,6 @@ $(document).ready(function () {
         };
       });
     control = L.control.layers(null, layers).addTo(map);
+    
   });
 });
