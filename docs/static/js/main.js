@@ -217,7 +217,7 @@ $(document).ready(function () {
           "<b>Place de la poste</b><br>Diligences...<br><a href='#diligences'>En lire plus</a>"
         )
         .addTo(map),
-        L.marker([46.50624689923878, 6.626120736247698]).bindPopup(
+        L.marker([46.50656843687059, 6.6262587784441385]).bindPopup(
           "<b>Débarcadère</b><br>Débarcadère d'Ouchy, arrivée des bâteaux à vapeur à Lausanne.<br><a href='#ouchy'>En lire plus</a>"
         ).addTo(map),
       ],
@@ -225,7 +225,7 @@ $(document).ready(function () {
         L.marker([46.516526, 6.629209]).bindPopup(
           "<b>Gare</b><br>Le début des trains à lausanne..<br><a href='#gare'>En lire plus</a>"
           ),
-          L.marker([46.50624689923878, 6.626120736247698]).bindPopup(
+          L.marker([46.50656843687059, 6.62625877844413858]).bindPopup(
             "<b>Ouchy</b><br>Débarcadère d'Ouchy, arrivée des bâteaux à vapeur à Lausanne.<br><a href='#ouchy_1873'>En lire plus</a>"
           ).addTo(map),
         ],
@@ -233,7 +233,7 @@ $(document).ready(function () {
           L.marker([46.512952, 6.628115]).bindPopup(
             "<b>Funiculaire</b><br>Funiculaire reliant Ouchy au Flon<br><a href='#funiculaire'>En lire plus</a>"
             ),
-            L.marker([46.50624689923878, 6.626120736247698]).bindPopup(
+            L.marker([46.50656843687059, 6.6262587784441385]).bindPopup(
               "<b>Débarcadère</b><br>Débarcadère d'Ouchy, arrivée des bâteaux à vapeur à Lausanne et connection avec le Funiculaire.<br><a href='#ouchy_1894'>En lire plus</a>"
             ).addTo(map),
       L.marker([46.52064916988745, 6.629920286708344]).bindPopup(
