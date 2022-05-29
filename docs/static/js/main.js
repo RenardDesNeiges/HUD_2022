@@ -231,22 +231,31 @@ $(document).ready(function () {
         ],
         1894: [
           L.marker([46.512952, 6.628115]).bindPopup(
-            "<b>Funiculaire</b><br>Funiculaire reliant Ouchy au Flon<br><a href='#funiculaire'>En lire plus</a>"
+          "<b>Funiculaire</b><br>Funiculaire reliant Ouchy au Flon<br><a href='#funiculaire'>En lire plus</a>"
+          ),
+          L.marker([46.50656843687059, 6.6262587784441385]).bindPopup(
+            "<b>Débarcadère</b><br>Débarcadère d'Ouchy, arrivée des bâteaux à vapeur à Lausanne et connection avec le Funiculaire.<br><a href='#ouchy_1894'>En lire plus</a>"
+          ),
+          L.marker([46.52064916988745, 6.629920286708344]).bindPopup(
+            "<b>Le Flon</b><br>Arrivée du funiculaire au flon<br><a href='#flon_1894'>En lire plus</a>"
+          ),
+          L.marker([46.52218500033085, 6.637986421916366]).bindPopup(
+            "<b>Dépot des Tramways Lausannois</b><br>Depot et centrale électrique.<br><a href='#tram_HQ'>En lire plus</a>"
+          ),
+          L.marker([46.51960369672084, 6.6327074018760905]).bindPopup(
+            "<b>Saint François</b><br>Passage du Tramway à Saint-François.<br><a href='#tram_Sainf'>Voir la photo et lire l'article.</a>"
+          ),
+          L.marker([46.516526, 6.629209]).bindPopup(
+            "<b>Gare</b><br>Développements de la gare de Lausanne.<br><a href='#gare_1894'>En lire plus</a>"
+          ),
+          L.marker([46.528844392159506, 6.630193754067561]).bindPopup(
+            "<b>Tramway</b><br>Passage d'un tramway devant la promenade de la liberté.<br><a href='#promenade_liberte'>Voir la photo et lire l'article.</a>"
             ),
-            L.marker([46.50656843687059, 6.6262587784441385]).bindPopup(
-              "<b>Débarcadère</b><br>Débarcadère d'Ouchy, arrivée des bâteaux à vapeur à Lausanne et connection avec le Funiculaire.<br><a href='#ouchy_1894'>En lire plus</a>"
-            ).addTo(map),
-      L.marker([46.52064916988745, 6.629920286708344]).bindPopup(
-        "<b>Le Flon</b><br>Arrivée du funiculaire au flon<br><a href='#flon_1894'>En lire plus</a>"
-      ),
-      L.marker([46.52184844667169, 6.638673977796248]).bindPopup(
-        "<b>Tramway (1896)</b><br>Début des tramways à lausanne<br><a href='#tram1896'>En lire plus</a>"
-      ),
-    ],
-    1928: [
-      L.marker([46.518924, 6.634789]).bindPopup(
-        "<b>Tramway</b><br>Développement des tramways<br><a href='#tram1928'>En lire plus</a>"
-      ),
+          ],
+        1928: [
+          L.marker([46.518924, 6.634789]).bindPopup(
+            "<b>Tramway</b><br>Développement des tramways<br><a href='#tram1928'>En lire plus</a>"
+        ),
     ],
   };
 
@@ -256,7 +265,7 @@ $(document).ready(function () {
   const articles = {
     1830: [$("#diligences").show(),$("#ouchy").show()],
     1873: [$("#gare"),$("#ouchy_1873")],
-    1894: [$("#funiculaire"), $("#tram1896"), $("#flon_1894"),$("#ouchy_1894")],
+    1894: [$("#funiculaire"), $("#tram1896"), $("#flon_1894"), $("#gare_1894"),$("#ouchy_1894")],
     1928: [$("#tram1928")],
   };
 
