@@ -30,26 +30,26 @@ $(document).ready(function () {
     });
     return _icon;
   }
-  tree_icon = generateIcon('static/icons/tree.png')
-  bridge_icon = generateIcon('static/icons/bridge.png')
-  boat_icon = generateIcon('static/icons/boat.png')
-  building_icon = generateIcon('static/icons/building.png')
-  horse_icon = generateIcon('static/icons/horse-car.png')
-  metro_icon = generateIcon('static/icons/metro.png')
-  train_icon = generateIcon('static/icons/train.png')
+  tree_icon = generateIcon("static/icons/tree.png");
+  bridge_icon = generateIcon("static/icons/bridge.png");
+  boat_icon = generateIcon("static/icons/boat.png");
+  building_icon = generateIcon("static/icons/building.png");
+  horse_icon = generateIcon("static/icons/horse-car.png");
+  metro_icon = generateIcon("static/icons/metro.png");
+  train_icon = generateIcon("static/icons/train.png");
 
-  var map = L.map("map").setView([46.51924129322557, 6.6315754917602625], 14);
+  var map = L.map("map").setView([46.519, 6.633], 14);
 
   // cartes
-  // 1830
+  // 1838
   var latLngBounds = [
     [46.55027628387409, 6.684811216405238],
     [46.49942980642084, 6.587568581887281],
   ];
 
-  const sieg_1830 = L.imageOverlay("static/img/1830.jpeg", latLngBounds, {
+  const sieg_1838 = L.imageOverlay("static/img/1838.jpeg", latLngBounds, {
     opacity: 0.8,
-    name: "Siegfried 1830",
+    name: "Siegfried 1838",
   });
 
   // 1873
@@ -92,7 +92,7 @@ $(document).ready(function () {
   });
 
   const map_dict = {
-    1830: sieg_1830,
+    1838: sieg_1838,
     1873: sieg_1873,
     1894: sieg_1894,
     1928: sieg_1928,
@@ -103,10 +103,10 @@ $(document).ready(function () {
   let control = null;
 
   // base vectorielle de Lausanne
-  fetch("static/json/base_1830.geojson")
+  fetch("static/json/base_1838.geojson")
     .then((res) => res.json())
     .then((data) => {
-      bases_dict[1830] = L.geoJSON(data, {
+      bases_dict[1838] = L.geoJSON(data, {
         style: {
           color: "gray",
         },
@@ -143,18 +143,18 @@ $(document).ready(function () {
   // bati
   const b_dict = {};
 
-  fetch("static/json/b_1830.geojson")
+  fetch("static/json/b_1838.geojson")
     .then((res) => res.json())
     .then((data) => {
-      b_dict[1830] = L.geoJSON(data, {
+      b_dict[1838] = L.geoJSON(data, {
         style: {
           color: "#00C19F",
         },
       }).addTo(map);
       control = L.control
         .layers(null, {
-          Bati: b_dict[1830],
-          Carte: map_dict[1830],
+          Bâti: b_dict[1838],
+          Carte: map_dict[1838],
         })
         .addTo(map);
     });
@@ -205,7 +205,7 @@ $(document).ready(function () {
   fetch("static/json/1894_funiculaire.geojson")
     .then((res) => res.json())
     .then((data) => {
-      t_dict[1894]["Funiculaire"] = L.geoJSON(data, {
+      t_dict[1894]["Funiculaire Lausanne-Ouchy"] = L.geoJSON(data, {
         style: {
           color: "#FF8247",
         },
@@ -220,48 +220,57 @@ $(document).ready(function () {
         },
       });
     });
-  fetch("static/json/1928_tramway_1.geojson")
+  fetch("static/json/1928_tramway.geojson")
     .then((res) => res.json())
     .then((data) => {
-      t_dict[1928]["Tramway 1 (1928)"] = L.geoJSON(data, {
+      t_dict[1928]["Tramway (1928)"] = L.geoJSON(data, {
         style: {
           color: "#D7EF16",
         },
       });
     });
-  fetch("static/json/1928_tramway_2.geojson")
+  fetch("static/json/1928_funiculaire.geojson")
     .then((res) => res.json())
     .then((data) => {
-      t_dict[1928]["Tramway 2 (1928)"] = L.geoJSON(data, {
+      t_dict[1928]["Funiculaire Lausanne-Signal"] = L.geoJSON(data, {
         style: {
-          color: "#D7EF16",
+          color: "#FF8247",
         },
       });
     });
 
-    //marker images 1830
-    var vallee_flon_img = '<img src="static/img/flon_1830.jpeg" class="w-screen"/>';
-    var diligences_img = '<img src="static/img/hotel_des_postes.jpeg" class="w-screen"/>';
-    //marker images 1873
-    var vallee_flon_pont_img = '<img src="static/img/flon_1844_7.jpeg" class="w-screen"/>';
-    var gare_1873_img = '<img src="static/img/Inaug_gare_lausanne.jpg" class="w-screen"/>';
-    var ouchy_1873_img = '<img src="static/img/beau_rivage.jpeg" class="w-screen"/>';
-    //marker images 1894
-    var gare_1894_img = '<img src="static/img/gare_1900.jpg" class="w-screen"/>';
-    var ouchy_1894_img = '<img src="static/img/ouchy_port_1.jpg" class="w-screen"/>';
-    var funiculaire_1894_img = '<img src="static/img/ligne_funiculaire.jpeg" class="w-screen"/>';
-    var flon_1894_img = '<img src="static/img/marchandises_flon.jpg" class="w-screen"/>';
-    var flon_remblaiment_1894_img = '<img src="static/img/flon_remblement.jpg" class="w-screen"/>';
-    var depot_TL_1894_img = '<img src="static/img/generatrice.jpg" class="w-screen"/>';
-    var liberte_1894_img = '<img src="static/img/promenade_de_la_liberte_1905.jpg" class="w-screen"/>';
-    var sainf_eglise_1894_img = '<img src="static/img/sainf_eglise_1899.jpg" class="w-screen"/>';
-    
+  //marker images 1838
+  var vallee_flon_img =
+    '<img src="static/img/flon_1838.jpeg" class="w-screen"/>';
+  var diligences_img =
+    '<img src="static/img/hotel_des_postes.jpeg" class="w-screen"/>';
+  //marker images 1873
+  var vallee_flon_pont_img =
+    '<img src="static/img/flon_1844_7.jpeg" class="w-screen"/>';
+  var gare_1873_img =
+    '<img src="static/img/Inaug_gare_lausanne.jpg" class="w-screen"/>';
+  var ouchy_1873_img =
+    '<img src="static/img/beau_rivage.jpeg" class="w-screen"/>';
+  //marker images 1894
+  var gare_1894_img = '<img src="static/img/gare_1900.jpg" class="w-screen"/>';
+  var ouchy_1894_img =
+    '<img src="static/img/ouchy_port_1.jpg" class="w-screen"/>';
+  var funiculaire_1894_img =
+    '<img src="static/img/ligne_funiculaire.jpeg" class="w-screen"/>';
+  var flon_1894_img =
+    '<img src="static/img/marchandises_flon.jpg" class="w-screen"/>';
+  var flon_remblaiment_1894_img =
+    '<img src="static/img/flon_remblement.jpg" class="w-screen"/>';
+  var depot_TL_1894_img =
+    '<img src="static/img/generatrice.jpg" class="w-screen"/>';
+  var liberte_1894_img =
+    '<img src="static/img/promenade_de_la_liberte_1905.jpg" class="w-screen"/>';
+  var sainf_eglise_1894_img =
+    '<img src="static/img/sainf_eglise_1899.jpg" class="w-screen"/>';
 
-
-
-    // markers
+  // markers
   const markers = {
-    1830: [
+    1838: [
       L.marker([46.519549, 6.632527], { icon: horse_icon })
         .bindPopup(
           "<b>Place de la poste</b><br>Départ des Diligences, le principal mode de transport inter-urbain au mi-XIXème siècle.<br><a href='#diligences'>En lire plus</a>" +
@@ -390,7 +399,7 @@ $(document).ready(function () {
     }
 
     let layers = {
-      Bati: b_dict[map_id],
+      Bâti: b_dict[map_id],
       Carte: map_dict[map_id],
     };
 
