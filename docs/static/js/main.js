@@ -38,7 +38,7 @@ $(document).ready(function () {
   metro_icon = generateIcon("static/icons/metro.png");
   train_icon = generateIcon("static/icons/train.png");
 
-  var map = L.map("map").setView([46.51924129322557, 6.6315754917602625], 14);
+  var map = L.map("map").setView([46.519, 6.633], 14);
 
   // cartes
   // 1838
@@ -153,7 +153,7 @@ $(document).ready(function () {
       }).addTo(map);
       control = L.control
         .layers(null, {
-          Bati: b_dict[1838],
+          Bâti: b_dict[1838],
           Carte: map_dict[1838],
         })
         .addTo(map);
@@ -205,7 +205,7 @@ $(document).ready(function () {
   fetch("static/json/1894_funiculaire.geojson")
     .then((res) => res.json())
     .then((data) => {
-      t_dict[1894]["Funiculaire"] = L.geoJSON(data, {
+      t_dict[1894]["Funiculaire Lausanne-Ouchy"] = L.geoJSON(data, {
         style: {
           color: "#FF8247",
         },
@@ -220,21 +220,21 @@ $(document).ready(function () {
         },
       });
     });
-  fetch("static/json/1928_tramway_1.geojson")
+  fetch("static/json/1928_tramway.geojson")
     .then((res) => res.json())
     .then((data) => {
-      t_dict[1928]["Tramway 1 (1928)"] = L.geoJSON(data, {
+      t_dict[1928]["Tramway (1928)"] = L.geoJSON(data, {
         style: {
           color: "#D7EF16",
         },
       });
     });
-  fetch("static/json/1928_tramway_2.geojson")
+  fetch("static/json/1928_funiculaire.geojson")
     .then((res) => res.json())
     .then((data) => {
-      t_dict[1928]["Tramway 2 (1928)"] = L.geoJSON(data, {
+      t_dict[1928]["Funiculaire Lausanne-Signal"] = L.geoJSON(data, {
         style: {
-          color: "#D7EF16",
+          color: "#FF8247",
         },
       });
     });
@@ -438,7 +438,7 @@ $(document).ready(function () {
     }
 
     let layers = {
-      Bati: b_dict[map_id],
+      Bâti: b_dict[map_id],
       Carte: map_dict[map_id],
     };
 
