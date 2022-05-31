@@ -267,6 +267,8 @@ $(document).ready(function () {
     '<img src="static/img/promenade_de_la_liberte_1905.jpg" class="w-screen"/>';
   var sainf_eglise_1894_img =
     '<img src="static/img/sainf_eglise_1899.jpg" class="w-screen"/>';
+  var signal_1928_img =
+    '<img src="static/img/signal.jpeg" class="w-screen"/>';
 
   // markers
   const markers = {
@@ -376,6 +378,11 @@ $(document).ready(function () {
       }).bindPopup(
         "<b>Flon</b><br>Le Flon en 1928.<br><a href='#flon_1928'>En lire plus</a>"
       ),
+      L.marker([46.52671343867504, 6.638096388799094], {
+        icon: metro_icon,
+      }).bindPopup(
+        "<b>Le Funiculaire Lausanne Signal</b><br>Connecte la place du Vallon au Signal de Sauvablin.<br><a href='#funi_signal'>En lire plus</a>"+signal_1928_img
+      ),
       L.marker([46.506665528620374, 6.627924678748705], {
         icon: building_icon,
       }).bindPopup(
@@ -400,7 +407,12 @@ $(document).ready(function () {
       $("#gare_1894"),
       $("#ouchy_1894"),
     ],
-    1928: [$("#tram1928"), $("#flon_1928"), $("#bel_air_1928"), $("#gare_1928")],
+    1928: [
+      $("#tram1928"), 
+      $("#flon_1928"), 
+      $("#bel_air_1928"), 
+      $("#funi_signal"), 
+      $("#gare_1928")],
   };
 
   // gestion des boutons
