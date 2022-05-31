@@ -318,7 +318,7 @@ $(document).ready(function () {
             "<b>Tramway</b><br>Développement des tramways<br><a href='#tram1928'>En lire plus</a>"
             ),
           L.marker([46.516526, 6.629209],{icon: train_icon}).bindPopup(
-              "<b>Gare</b><br>Développements de la gare de Lausanne.<br><a href='#gare_1894'>En lire plus</a>"+gare_1894_img
+              "<b>Gare</b><br>Développements de la gare de Lausanne.<br><a href='#gare_1928'>En lire plus</a>"+gare_1894_img
             ),
           L.marker([46.52178535359798, 6.629567871159335],{icon: building_icon}).bindPopup(
             "<b>Bel-Air</b><br>Ascenceur a train omg c'est absolutely bananas.<br><a href='#bel_air_1928'>En lire plus</a>"
@@ -351,6 +351,7 @@ $(document).ready(function () {
             $("#ouchy_1894")],
     1928: [ $("#tram1928"),
             $("#flon_1928"),
+            $("#gare_1928"),
             $("#bel_air_1928"),],
   };
 
