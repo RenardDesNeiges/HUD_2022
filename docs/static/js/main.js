@@ -269,6 +269,14 @@ $(document).ready(function () {
     '<img src="static/img/sainf_eglise_1899.jpg" class="w-screen"/>';
   var signal_1928_img =
     '<img src="static/img/signal.jpeg" class="w-screen"/>';
+  var flon_1928_img =
+    '<img src="static/img/flon_1920.jpg" class="w-screen"/>';
+  var flon_entrepots_1928_img =
+    '<img src="static/img/flon_entrepots.jpeg" class="w-screen"/>';
+  var bel_air_log_1928_img =
+    '<img src="static/img/bel_air_log.jpeg" class="w-screen"/>';
+  var sainf_1928_img =
+    '<img src="static/img/poste_1903.jpeg" class="w-screen"/>';
 
   // markers
   const markers = {
@@ -357,7 +365,7 @@ $(document).ready(function () {
     ],
     1928: [
       L.marker([46.518924, 6.634789], { icon: metro_icon }).bindPopup(
-        "<b>Tramway</b><br>Développement des tramways<br><a href='#tram1928'>En lire plus</a>"
+        "<b>Saint-François</b><br>Développement des tramways<br><a href='#tram1928'>En lire plus</a>" + sainf_1928_img
       ),
       L.marker([46.516526, 6.629209], { icon: train_icon }).bindPopup(
         "<b>Gare</b><br>Développements de la gare de Lausanne.<br><a href='#gare_1928'>En lire plus</a>" +
@@ -366,17 +374,17 @@ $(document).ready(function () {
       L.marker([46.52178535359798, 6.629567871159335], {
         icon: building_icon,
       }).bindPopup(
-        "<b>Bel-Air</b><br>Ascenceur a train omg c'est absolutely bananas.<br><a href='#bel_air_1928'>En lire plus</a>"
+        "<b>Bel-Air</b><br>Gare de Marchandises de Bel-Air.<br><a href='#bel_air_1928'>En lire plus</a>" + bel_air_log_1928_img
       ),
       L.marker([46.52209385399581, 6.625520412507395], {
         icon: building_icon,
       }).bindPopup(
-        "<b>Entrepots du Flon</b><br>Developpement des entrepots du Flon.<br><a href='#bel_air_1928'>En lire plus</a>"
+        "<b>Entrepots du Flon</b><br>Developpement des entrepots du Flon.<br><a href='#flon_1928'>En lire plus</a>"+flon_entrepots_1928_img
       ),
       L.marker([46.52064916988745, 6.629920286708344], {
         icon: building_icon,
       }).bindPopup(
-        "<b>Flon</b><br>Le Flon en 1928.<br><a href='#flon_1928'>En lire plus</a>"
+        "<b>Flon</b><br>Le Flon en 1928.<br><a href='#flon_1928'>En lire plus</a>"+ flon_1928_img
       ),
       L.marker([46.52671343867504, 6.638096388799094], {
         icon: metro_icon,
@@ -386,7 +394,7 @@ $(document).ready(function () {
       L.marker([46.506665528620374, 6.627924678748705], {
         icon: building_icon,
       }).bindPopup(
-        "<b>Ouchy</b><br>Arret Ouchy du Tramway<br><a href='#flon_1928'>En lire plus</a>"
+        "<b>Ouchy</b><br>Arret Ouchy du Tramway<br><a href='#tram1928'>En lire plus</a>" 
       ),
     ],
   };
