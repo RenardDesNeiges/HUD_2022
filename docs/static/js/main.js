@@ -277,6 +277,12 @@ $(document).ready(function () {
     '<img src="static/img/bel_air_log.jpeg" class="w-screen"/>';
   var sainf_1928_img =
     '<img src="static/img/poste_1903.jpeg" class="w-screen"/>';
+  var laiterie_1928_img =
+    '<img src="static/img/laterie.jpg" class="w-screen"/>';
+  var tl_marchandises =
+    '<img src="static/img/tl_marchandises.jpg" class="w-screen"/>';
+  var gare_1916_img =
+    '<img src="static/img/gare_1916.jpeg" class="w-screen"/>';
 
   // markers
   const markers = {
@@ -369,7 +375,7 @@ $(document).ready(function () {
       ),
       L.marker([46.516526, 6.629209], { icon: train_icon }).bindPopup(
         "<b>Gare</b><br>Développements de la gare de Lausanne.<br><a href='#gare_1928'>En lire plus</a>" +
-          gare_1894_img
+          gare_1916_img
       ),
       L.marker([46.52178535359798, 6.629567871159335], {
         icon: building_icon,
@@ -390,6 +396,16 @@ $(document).ready(function () {
         icon: metro_icon,
       }).bindPopup(
         "<b>Le Funiculaire Lausanne Signal</b><br>Connecte la place du Vallon au Signal de Sauvablin.<br><a href='#funi_signal'>En lire plus</a>"+signal_1928_img
+      ),
+      L.marker([46.524793792659324, 6.6301248088832825], {
+        icon: metro_icon,
+      }).bindPopup(
+        "<b>Laiterie Agricole</b><br>La Laiterie agricole de Lausanne utilisais le réseau de tramway pour son approvisionnement.<br><a href='#laiterie_tof'>En lire plus</a>"+laiterie_1928_img
+      ),
+      L.marker([46.524995499510275, 6.634517744939428], {
+        icon: metro_icon,
+      }).bindPopup(
+        "<b>Train de marchandises sur le réseau TL.</b><br>Rue des deux marchés.<br><a href='#tl_marchandises'>En lire plus</a>"+tl_marchandises
       ),
       L.marker([46.506665528620374, 6.627924678748705], {
         icon: building_icon,
