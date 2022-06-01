@@ -1,12 +1,20 @@
 # Le développement des transports publics Lausannois en 1900
 
-## Projet d'Histoire Urbaine et Digitale
+"Une histoire géographique du développement des transports dans le centre ville de Lausanne"
 
-![demo_1](demo_1.gif)
+Construction d'un site internet permettant d'explorer le développement des transports publics Lausannois de 1830 a 1928. Projet réalisé dans le cadre du cours Histoire Urbaine et Digitale à l'EPFL. 
 
-## Organisation des fichiers
+![demo_2](demo_2.gif)
 
+Visiter le site internet en ligne, [lien ici](https://renarddesneiges.github.io/HUD_2022/).
 
+# Organisation des fichiers et du code
+
+## *Site internet*
+
+La carte est implémentée avec la librairie `Leaflet.js`, le site utilise la librairie `tailwind` pour le css.
+
+## *Données géographiques*
 
 ```
  - data
@@ -34,3 +42,7 @@
  |----------> trams
  |----------> trains
 ```
+
+## *Parsing des données*
+
+Le fichier python `build_folium.py` converti des shapefiles générés par QGIS en `geojson` lisibles par le site internet. Les modules requis pour l'utiliser sont listés dans `requirements.txt`.
